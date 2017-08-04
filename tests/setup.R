@@ -11,6 +11,9 @@ dhs_cat <-
 		your_password = my_password ,
 		your_project = my_project )
 
+# the recent indian files are too large to test
+dhs_cat <- subset( dhs_cat , !grepl( "IAIR52DT" , full_url ) )
+		
 # sample 10% of the records
 which_records <- sample( seq( nrow( dhs_cat ) ) , round( nrow( dhs_cat ) * 0.10 ) )
 
