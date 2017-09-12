@@ -18,7 +18,7 @@ dhs_cat <- subset( dhs_cat , !grepl( "IAIR52" , full_url ) )
 which_records <- sample( seq( nrow( dhs_cat ) ) , round( nrow( dhs_cat ) * 0.10 ) )
 
 # always sample the 2004 malawi sample
-dhs_cat <- unique( rbind( dhs_cat[ which_records , ] , subset( dhs_cat , year == 2004 & country == 'Malawi' & grepl( "MWIR4DDT" , full_url ) ) ) )
+dhs_cat <- unique( rbind( dhs_cat[ which_records , ] , subset( dhs_cat , year == 2004 & country == 'Malawi' & grepl( "MWIR4EDT" , full_url ) ) ) )
 
 lodown( "dhs" , dhs_cat , 
 		your_email = my_email_address , 
