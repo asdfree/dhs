@@ -2,6 +2,8 @@ if ( .Platform$OS.type == 'windows' ) memory.limit( 256000 )
 my_email_address <- Sys.getenv( "my_email_address" )
 my_password <- Sys.getenv( "my_password" )
 my_project <- Sys.getenv( "my_project" )
+this_sample_break <- Sys.getenv( "this_sample_break" )
+
 library(lodown)
 
 dhs_cat <-
@@ -13,12 +15,10 @@ dhs_cat <-
 
 # some indian files are too large to test on 
 dhs_cat <- subset( dhs_cat , !grepl( "IAIR52" , full_url ) )
-		
-# sample 10% of the records
-which_records <- sample( seq( nrow( dhs_cat ) ) , round( nrow( dhs_cat ) * 0.10 ) )
+	
+record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 10 ) )
 
-# always sample the 2004 malawi sample
-dhs_cat <- unique( rbind( dhs_cat[ which_records , ] , subset( dhs_cat , year == 2004 & country == 'Malawi' & grepl( "MWIR4EDT" , full_url ) ) ) )
+dhs_cat <- unique( rbind( dhs_cat[ record_categories == this_sample_break , ] , dhs_cat[ dhs_cat$year == 2004 & dhs_cat$country == 'Malawi' & grepl( "MWIR4EDT" , dhs_cat$full_url ) , ] ) )
 
 lodown( "dhs" , dhs_cat , 
 		your_email = my_email_address , 
