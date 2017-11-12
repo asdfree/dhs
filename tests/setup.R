@@ -16,7 +16,7 @@ dhs_cat <-
 # some indian files are too large to test on 
 dhs_cat <- subset( dhs_cat , !grepl( "IAIR52" , full_url ) )
 	
-record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 10 ) )
+record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 12 ) )
 
 dhs_cat <- unique( rbind( dhs_cat[ record_categories == this_sample_break , ] , dhs_cat[ dhs_cat$year == 2004 & dhs_cat$country == 'Malawi' & grepl( "MWIR4EDT" , dhs_cat$full_url ) , ] ) )
 
