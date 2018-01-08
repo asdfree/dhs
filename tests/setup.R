@@ -38,10 +38,10 @@ dhs_cat <-
 # Malawi only
 dhs_cat <- subset( dhs_cat , country == 'Malawi' )
 # download the microdata to your local computer
-lodown( "dhs" , dhs_cat , 
-	your_email = my_email_address , 
-	your_password = my_password , 
-	your_project = my_project )
+
+
+
+
 
 library(survey)
 
