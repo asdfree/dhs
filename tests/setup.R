@@ -13,18 +13,18 @@ dhs_cat <-
 		your_password = my_password ,
 		your_project = my_project )
 
-record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 12 ) )
-
-dhs_cat <- dhs_cat[ record_categories == this_sample_break , ]
 
 # some indian files are too large to test on 
 dhs_cat <- subset( dhs_cat , !grepl( "IAIR52" , full_url ) )
+
+record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 12 ) )
+
+dhs_cat <- dhs_cat[ record_categories == this_sample_break , ]
 
 lodown( "dhs" , dhs_cat , 
 		your_email = my_email_address , 
 		your_password = my_password ,
 		your_project = my_project )
-
 if( any( dhs_cat$year == 2004 & dhs_cat$country == 'Malawi' & grepl( "MWIR4EDT" , dhs_cat$full_url ) ) ){
 library(lodown)
 # examine all available DHS microdata files
