@@ -48,7 +48,7 @@ library(survey)
 dhs_df <- 
 	readRDS( 
 		file.path( getwd() , 
-		"Malawi/Standard DHS 2004/MWIR4EDT.rds" ) 
+		"Malawi/Standard DHS 2004/MWIR4EFL.rds" ) 
 	)
 
 # convert the weight column to a numeric type
