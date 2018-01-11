@@ -4,7 +4,7 @@ Title: dhs
 Version: 0.1.0
 Author: Anthony Joseph Damico
 Maintainer: Anthony Joseph Damico <ajdamico@gmail.com>
-Description: A continuous integration package, tested on ajdamico/asdfree commit 7ce6ad0281dac2ae62a3edd368b18b78f25aee11 ajdamico/lodown commit e0ba2288f141fabbf7c5a95c7b0c23d3b0c32e54
+Description: A continuous integration package, tested on ajdamico/asdfree commit d60bc6710e2d699f1cc642ca8eb7823a3d51d181 ajdamico/lodown commit e0ba2288f141fabbf7c5a95c7b0c23d3b0c32e54
 License: GPL-3
 Imports: survey, lodown, srvyr
 Encoding: UTF-8
