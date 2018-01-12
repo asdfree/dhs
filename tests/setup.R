@@ -15,7 +15,7 @@ dhs_cat <-
 
 
 # some indian files are too large to test on 
-dhs_cat <- subset( dhs_cat , !grepl( "IAIR52" , full_url ) )
+dhs_cat <- subset( dhs_cat , !grepl( "IAIR52|IABR71DT" , full_url ) )
 
 record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 12 ) )
 
