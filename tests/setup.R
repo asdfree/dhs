@@ -22,7 +22,7 @@ dhs_cat <- subset( dhs_cat , !grepl( "fl\\.zip|sd\\.zip|sv\\.zip" , full_url , i
 # skip some large files
 dhs_cat <- subset( dhs_cat , !grepl( "ia[a-z]r71|ia[a-z]r52|egir01|egkr01" , full_url , ignore.case = TRUE ) )
 
-record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 20 ) )
+record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 4 ) )
 
 dhs_cat <- dhs_cat[ record_categories == this_sample_break , ]
 
