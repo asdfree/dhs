@@ -37,7 +37,7 @@ dhs_cat <-
 		your_password = my_password , 
 		your_project = my_project )
 
-# Malawi stata files only
+# malawi 2004 only
 dhs_cat <- subset( dhs_cat , country == 'Malawi' & year == 2004 )
 # download the microdata to your local computer
 
