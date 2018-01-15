@@ -16,10 +16,10 @@ dhs_cat <-
 		your_project = my_project )
 
 
-# some indian files are too large to test on 
-dhs_cat <- subset( dhs_cat , !grepl( "IAIR52|IABR71|IAHR71FL" , full_url ) )
+# skip flat ascii, sas, and spss files
+dhs_cat <- subset( dhs_cat , !grepl( "fl\\.zip|sd\\.zip|sv\\.zip" , full_url , ignore.case = TRUE ) )
 
-record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 12 ) )
+record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 10 ) )
 
 dhs_cat <- dhs_cat[ record_categories == this_sample_break , ]
 
@@ -37,8 +37,8 @@ dhs_cat <-
 		your_password = my_password , 
 		your_project = my_project )
 
-# Malawi only
-dhs_cat <- subset( dhs_cat , country == 'Malawi' )
+# Malawi stata files only
+dhs_cat <- subset( dhs_cat , country == 'Malawi' & year == 2004 )
 # download the microdata to your local computer
 
 
@@ -50,7 +50,7 @@ library(survey)
 dhs_df <- 
 	readRDS( 
 		file.path( getwd() , 
-		"Malawi/Standard DHS 2004/MWIR4EFL.rds" ) 
+		"Malawi/Standard DHS 2004/MWIR4EDT.rds" )
 	)
 
 # convert the weight column to a numeric type
