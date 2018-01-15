@@ -20,7 +20,7 @@ dhs_cat <-
 dhs_cat <- subset( dhs_cat , !grepl( "fl\\.zip|sd\\.zip|sv\\.zip" , full_url , ignore.case = TRUE ) )
 
 # skip some large files
-dhs_cat <- subset( dhs_cat , !grepl( "iabr71|iahr71|iair71" , full_url , ignore.case = TRUE ) )
+dhs_cat <- subset( dhs_cat , !grepl( "iabr71|iahr71|iair71|egir01dt" , full_url , ignore.case = TRUE ) )
 
 record_categories <- ceiling( seq( nrow( dhs_cat ) ) / ceiling( nrow( dhs_cat ) / 20 ) )
 
