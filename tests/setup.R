@@ -22,7 +22,7 @@ dhs_cat <- subset( dhs_cat , !grepl( "fl\\.zip|sd\\.zip|sv\\.zip" , full_url , i
 # skip some large files
 dhs_cat <- subset( dhs_cat , !grepl( "ia[a-z]r71|ia[a-z]r52|egir01|egkr01" , full_url , ignore.case = TRUE ) )
 
-dhs_cat <- dhs_cat[ split( seq( nrow( dhs_cat ) ) , sort( seq( nrow( dhs_cat ) ) %% 5 ) )[[ this_sample_break ]] , ]
+dhs_cat <- dhs_cat[ split( seq( nrow( dhs_cat ) ) , 1 + sort( seq( nrow( dhs_cat ) ) %% 5 ) )[[ this_sample_break ]] , ]
 
 lodown( "dhs" , dhs_cat , 
 		your_email = my_email_address , 
