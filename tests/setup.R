@@ -24,23 +24,23 @@ dhs_cat <- subset( dhs_cat , !grepl( "ia[a-z]r71|ia[a-z]r52|egir01|egkr01" , ful
 
 dhs_cat <- dhs_cat[ split( seq( nrow( dhs_cat ) ) , 1 + sort( seq( nrow( dhs_cat ) ) %% 5 ) )[[ this_sample_break ]] , ]
 
-lodown( "dhs" , dhs_cat , 
+dhs_cat <- lodown( "dhs" , dhs_cat , 
 		your_email = my_email_address , 
 		your_password = my_password ,
 		your_project = my_project )
 if( any( dhs_cat$year == 2004 & dhs_cat$country == 'Malawi' & grepl( "MWIR4EDT" , dhs_cat$full_url ) ) ){
-library(lodown)
-# examine all available DHS microdata files
-dhs_cat <-
-	get_catalog( "dhs" ,
-		output_dir = file.path( getwd() ) , 
-		your_email = my_email_address , 
-		your_password = my_password , 
-		your_project = my_project )
 
-# malawi 2004 only
-dhs_cat <- subset( dhs_cat , country == 'Malawi' & year == 2004 )
-# download the microdata to your local computer
+
+
+
+
+
+
+
+
+
+
+
 
 
 
