@@ -20,7 +20,7 @@ dhs_cat <-
 dhs_cat <- subset( dhs_cat , !grepl( "fl\\.zip|sd\\.zip|sv\\.zip" , full_url , ignore.case = TRUE ) )
 
 # skip some large files
-dhs_cat <- subset( dhs_cat , !grepl( "ia[a-z]r71|ia[a-z]r52|egir01|egkr01" , full_url , ignore.case = TRUE ) )
+dhs_cat <- subset( dhs_cat , !grepl( "ia[a-z]r71|ia[a-z]r52|egir01|egkr01|iabr72" , full_url , ignore.case = TRUE ) )
 
 dhs_cat <- dhs_cat[ split( seq( nrow( dhs_cat ) ) , 1 + sort( seq( nrow( dhs_cat ) ) %% 5 ) )[[ this_sample_break ]] , ]
 
